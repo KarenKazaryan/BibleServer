@@ -1,6 +1,6 @@
 import datetime
 
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 
 
 class DbUser(BaseModel):
@@ -8,9 +8,9 @@ class DbUser(BaseModel):
     login: str
     password: str
     birthday: datetime.date
+    email: EmailStr
     country: str
     city: str
-    email: str
 
     class Config:
         orm_mode = True
